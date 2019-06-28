@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iChat Real-time Chats</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- socket.io js file need to inserted to use client access for socket -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js" integrity="sha256-i2Orhi397HWPn93rsCUTW8HBoso65vY/VNTllm9Kuqo=" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- chat js file for socket -->
+    <script src="/chat.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid mx-auto">
+
+        <div class="row bg-dark" style="height: 100vh" id="chat-window">
+            <div class="col-md-4 text-success" id="users">
+                <div class="card bg-dark" style="height: 100vh">
+                    <div class="card-body">
+                        <h5 class="card-title">iChat<sup>Beta</sup></h5> 
+                        <form class="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="handle" placeholder="Name" id="handle">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="message" placeholder="Message" id="message" autofocus>
+                            </div>
+                            <button type="button" class="btn btn-outline-success float-right" id='send'>Send</i></button>
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 bg-white text-primary px-5 pt-5" style="height: 100%; overflow-y:scroll" id="messages">
+                <p id="latest"></p>
+                <div id="feedback"></div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
